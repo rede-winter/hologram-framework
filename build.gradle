@@ -6,7 +6,7 @@ subprojects {
     apply plugin: 'java-library'
 
     group 'com.github.eokasta.hologram'
-    version '1.0-SNAPSHOT'
+    version '1.1.0'
 
     repositories {
         mavenCentral()
@@ -14,7 +14,7 @@ subprojects {
 
         maven { url = "https://hub.spigotmc.org/nexus/content/repositories/snapshots/" }
         maven { url = "https://oss.sonatype.org/content/repositories/snapshots" }
-        maven { url "https://repo.dmulloy2.net/repository/public/" }
+        maven { url = "https://repo.dmulloy2.net/repository/public/" }
     }
 
     dependencies {

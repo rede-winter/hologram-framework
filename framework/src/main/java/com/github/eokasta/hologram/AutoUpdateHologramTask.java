@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import org.bukkit.Bukkit;
 
 /**
- *
  * @author Lucas Monteiro
  */
 @RequiredArgsConstructor
@@ -14,18 +13,20 @@ public class AutoUpdateHologramTask implements Runnable {
 
     @Override
     public void run() {
-        registry.forEach(hologram -> {
-            if (hologram.isDestroyed())
+        for (Hologram hologram : registry) {
+            if (hologram.isDestroyed()) {
                 registry.unregisterHologram(hologram);
+                return;
+            }
 
             hologram.update();
-        });
+        }
     }
 
     /**
      * Initializes the auto update holograms with the delay to start and the period between each update.
      *
-     * @param delay the delay to start.
+     * @param delay  the delay to start.
      * @param period the period between each update.
      */
     public void initialize(long delay, long period) {
